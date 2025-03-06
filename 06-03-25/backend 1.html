@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title>counter</title>
+
+</head>
+<body style="background-color: blanchedalmond;">
+    <div>
+    <center>
+        <h1 style="color: bisque;background-color: black;">counter</h1>
+        <p style="color: bisque;background-color: black;" id="count">0</p>
+        <button style="background-color: bisque;" onclick="add()">+1</button>
+        <button style="background-color: bisque;" onclick="sub()">-1</button>
+        <button style="background-color: bisque;" onclick="reset()">reset</button>
+    </center>
+</div>
+
+    
+    <script>
+        
+        let count=0
+        
+
+        function add(){
+            count=count+1
+            render()
+        }
+        function sub(){
+            count=count-1
+            render()
+        }
+        function reset(){
+            count=0
+            render()
+        }
+        function render(){
+            document.getElementById("count").innerHTML=count
+        }
+        
+
+    </script>
+</body>

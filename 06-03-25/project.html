@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <title>counter</title>
+    <style>
+        .margin{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: black;
+        }
+        .dappa{
+        
+            
+            justify-content: center;
+            display: flex;
+            background:bisque
+            margin-top: 150px;
+            margin left: 300px;
+            align-items: center;
+            padding-left: 0%;
+            
+            
+        }
+    </style>
+
+</head>
+
+<body class="dappa" style="background-color: white;">
+    <div>
+    <center>
+        <h1 style="color:  black;">counter</h1>
+        <p class="margin" style="color: bisque;" id="count">0</p>
+        <button class="margin" style="color: bisque;" onclick="add()">+1</button><button class="margin" style="color: bisque;" onclick="sub()">-1</button><br>
+        
+        <button  style="color: bisque;background-color: black;" onclick="reset()">reset</button>
+    </center>
+</div>
+
+    
+    <script>
+        
+        let count=0
+        
+
+        function add(){
+            count=count+1
+            render()
+        }
+        function sub(){
+            count=count-1
+            render()
+        }
+        function reset(){
+            count=0
+            render()
+        }
+        function render(){
+            document.getElementById("count").innerHTML=count
+        }
+        
+
+    </script>
+</body>
