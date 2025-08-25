@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Demo</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <div><h1>CSS Box Model Demonstration</h1></div>
+
+        <div class="box-container">
+            <div id="box-example" class="box-inside">
+                <p style="color: aliceblue;">content</p>
+            </div>
+        </div>
+
+        <div class="adjusting-box">
+            <div class="adjusting-box1">
+                <p>Padding: <span id="margin-value">0px</span></p>
+                <input type="range" id="margin"  max="100" value="0">
+            </div>
+            <div class="adjusting-box2">
+                <p>Border: <span id="border-value">0px</span></p>
+                <input type="range" id="border" max="30" value="0">
+            </div>
+            <div class="adjusting-box3">
+                <p>content: <span id="padding-value">0px</span></p>
+                <input type="range" id="padding"  max="50" value="0">
+            </div>
+        </div>
+
+        <div class="scale">
+            <div class="scale-heading box"><h1>Box Model Components</h1></div>
+            <div class="box">
+                <div class="sbox box1"></div>
+                <div style="display: flex;"><h4>Margin - space outside the border (transparent)</h4></div>
+            </div>
+            <div class="box">
+                <div class="sbox box2"></div>
+                <div style="display: flex;"><h3>Border - surrounds the padding and content</h3></div>
+            </div>
+            <div class="box">
+                <div class="sbox box3"></div>
+                <div style="display: flex;"><h3>Padding - space between border and content</h3></div>
+            </div>
+            <div class="box">
+                <div class="sbox box4"></div>
+                <div style="display: flex;"><h3>Content - actual content of the box</h3></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="document.js"></script>
+</body>
+</html>
