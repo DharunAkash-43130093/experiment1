@@ -1,0 +1,210 @@
+package project4;
+
+public class OverloadDemo {
+	public static void main(String args[]){
+		basicc b = new basicc();
+		b.add(1,2);
+		b.add(1,2.2);
+		b.add(3,5,6);
+	}
+	}
+	//OVERLOADING
+	class basicc{
+		void add(int a,int b){
+			System.out.println(a+b);
+		}
+		void add(int a,double b){
+			System.out.println(a+b);
+		}
+		void add(int a,int b,int c){
+			System.out.print(a+b+c);
+		}
+	}
+
+
+
+
+
+package project5;
+
+public class constructor {
+	 public static void main(String[] args) {
+	        Student s1 = new Student();
+	        Student s2 = new Student("Bharat");
+	        Student s3 = new Student(101, "BB");
+	    }
+	}
+	//CONSTRUCTOR
+	class Student {
+
+	    Student() {
+	        System.out.println("Default Constructor Called");
+	    }
+
+	    Student(String name) {
+	        System.out.println("Student Name: " + name);
+	    }
+
+	    Student(int id, String name) {
+	        System.out.println("Student ID: " + id + ", Name: " + name);
+	    }
+	}
+
+
+
+
+
+
+package project6;
+
+public class getset {
+	public static void main(String args[])  {
+        PhonePe p = new PhonePe();
+
+        p.setName("Bharat");
+        p.setEmail("bharat@gmail.com");
+        p.setBalance(1000000);
+
+        p.checkDetails();
+    }
+}
+//ENCAPSULATOIN
+class SBI {
+    private String name;
+    private String email;
+    private long balance;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setBalance(long balance) {
+        this.balance = balance;
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+}
+class PhonePe extends SBI {
+    void checkDetails() {
+        System.out.println(getName());
+        System.out.println(getEmail());
+        System.out.println(getBalance());
+    }
+}
+
+
+
+
+
+
+package project7;
+
+public class Abstract {
+	public static void main(String[] args) {
+        HDFC h = new HDFC();
+        h.agriLoan();
+        h.eduLoan();
+
+        DhanaLaxmi d = new DhanaLaxmi();
+        d.agriLoan();
+        d.eduLoan();
+    }
+}
+abstract class RBI {
+    private final void RBIBanking() {
+        System.out.println("Secret..");
+    }
+
+    abstract void agriLoan();
+    abstract void eduLoan();
+}
+class HDFC extends RBI {
+    @Override
+    void agriLoan() {
+        System.out.println("HDFC Agri Loan: 12%");
+    }
+    @Override
+    void eduLoan() {
+        System.out.println("HDFC Education Loan: 10%");
+    }
+}
+class DhanaLaxmi extends RBI {
+    @Override
+    void agriLoan() {
+        System.out.println("DhanaLaxmi Agri Loan: 11%");
+    }
+    @Override
+    void eduLoan() {
+        System.out.println("DhanaLaxmi Education Loan: 9%");
+    }
+}
+
+
+
+
+
+package project8;
+
+import java.util.Scanner;
+
+public class Exceptionalhandling {
+	public static void main(String[] args){
+	Scanner sc = new Scanner(System.in);
+	try{
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		System.out.println(a/b);
+	}
+	catch(ArithmeticException e){
+		System.out.println("You have done a small mistake"+e);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		System.out.println(a/b);
+	}
+	finally{
+		System.out.println("Thanks you , Visit again");
+	}
+	indexoutofbond ob = new indexoutofbond();
+	ob.exception();
+}
+}
+
+class indexoutofbond{
+void exception(){
+Scanner sc = new Scanner(System.in);
+try{
+int a[] = {1, 2, 3, 4, 5};
+
+System.out.println("Enter the index");
+int c = sc.nextInt();
+
+System.out.println("Value at index " + c + " = " + a[c]);
+}
+catch(ArrayIndexOutOfBoundsException e){
+	System.out.println("Wrong index entered,try again");
+	int a[] = {1, 2, 3, 4, 5};
+
+    System.out.println("Enter the index");
+    int c = sc.nextInt();
+
+    System.out.println("Value at index " + c + " = " + a[c]);
+}
+finally{
+	System.out.println("Thank you");
+}
+}
+}
